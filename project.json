@@ -1,7 +1,7 @@
 {
   "name": "Warehouse-Cost-Problem",
   "description": "Process to optimize the cost of transportation between warehouses",
-  "main": "Flowchart.xaml",
+  "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.3-beta.1188448]",
     "UiPath.Mail.Activities": "[1.9.3-beta.1189163]",
@@ -44,12 +44,6 @@
     {
       "filePath": "Main.xaml",
       "uniqueId": "aaf6a207-9315-4a39-8696-bdab6016fd92",
-      "input": [],
-      "output": []
-    },
-    {
-      "filePath": "Flowchart.xaml",
-      "uniqueId": "6f195148-8a36-49fe-89db-ce1cceab56da",
       "input": [],
       "output": []
     }
