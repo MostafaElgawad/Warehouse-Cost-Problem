@@ -1,8 +1,8 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Add_lists" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="List_1" Type="InArgument(scg:List(x:String))" />
-    <x:Property Name="List_2" Type="InArgument(scg:List(x:String))" />
-    <x:Property Name="Sum_List" Type="OutArgument(scg:List(x:Int32))" />
+    <x:Property Name="Out_Sum_List" Type="OutArgument(scg:List(x:Int32))" />
+    <x:Property Name="In_List_2" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="In_List_1" Type="InArgument(scg:List(x:String))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>665,529</sap:VirtualizedContainerService.HintSize>
@@ -78,12 +78,12 @@
     <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:Int32)">
-          <mca:CSharpReference x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">Sum_List</mca:CSharpReference>
+          <mca:CSharpReference x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">Out_Sum_List</mca:CSharpReference>
         </OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="scg:List(x:Int32)">
-          <mca:CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">List_1.ConvertAll(int.Parse).Zip(List_2.ConvertAll(int.Parse), (x , y) =&gt; x + y ).ToList()</mca:CSharpValue>
+          <mca:CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">In_List_1.ConvertAll(int.Parse).Zip(In_List_2.ConvertAll(int.Parse), (x , y) =&gt; x + y ).ToList()</mca:CSharpValue>
         </InArgument>
       </Assign.Value>
     </Assign>
