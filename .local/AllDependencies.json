@@ -3500,15 +3500,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {}
+    "C:\\Users\\Sarah\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Warehouse-Cost-Problem",
       "projectName": "Warehouse-Cost-Problem",
-      "projectPath": "F:\\UIpath\\Ch_4\\Warehouse-Cost-Problem-Mandatory_WareHouses finaaaaaal\\Warehouse-Cost-Problem-Mandatory_WareHouses\\.local",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "F:\\UIpath\\Ch_4\\Warehouse-Cost-Problem-Mandatory_WareHouses finaaaaaal\\Warehouse-Cost-Problem-Mandatory_WareHouses\\.local"
+      "projectPath": "C:\\Users\\Sarah\\Documents\\UiPath\\10-22\\.local",
+      "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sarah\\Documents\\UiPath\\10-22\\.local"
     },
     "frameworks": {
       "net461": {
