@@ -6,7 +6,7 @@
     <x:Property Name="Out_MinPrice" Type="OutArgument(x:Double)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1240,3605</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,3890</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -75,7 +75,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Algorithms" sap:VirtualizedContainerService.HintSize="869,3440" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Algorithms" sap:VirtualizedContainerService.HintSize="791,3725" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="Range" />
       <Variable x:TypeArguments="scg:List(scg:List(x:Int32))" Name="List_of_indices_where_we_found_it">
@@ -104,6 +104,11 @@
           <mca:CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">double.PositiveInfinity</mca:CSharpValue>
         </Variable.Default>
       </Variable>
+      <Variable x:TypeArguments="scg:List(x:String)" Name="NamesOfNeededWarehouses">
+        <Variable.Default>
+          <mca:CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">new List&lt;string&gt;()</mca:CSharpValue>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -111,7 +116,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="827,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="749,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">
           <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">Range</mca:CSharpReference>
@@ -123,8 +128,8 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="827,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="in algorithm" />
-    <Assign sap:VirtualizedContainerService.HintSize="827,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="749,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="in algorithm" />
+    <Assign sap:VirtualizedContainerService.HintSize="749,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(scg:List(x:String))">
           <mca:CSharpReference x:TypeArguments="scg:List(scg:List(x:String))" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">List_of_warehouses_to_be_modified</mca:CSharpReference>
@@ -136,22 +141,15 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="827,2659" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+    <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="749,2844" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="791,2494" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="713,2679" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="749,59" sap2010:WorkflowViewState.IdRef="MessageBox_1">
-            <ui:MessageBox.Text>
-              <InArgument x:TypeArguments="x:Object">
-                <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">Range.ToString()</mca:CSharpValue>
-              </InArgument>
-            </ui:MessageBox.Text>
-          </ui:MessageBox>
-          <Assign sap:VirtualizedContainerService.HintSize="749,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="scg:List(x:Int32)">
                 <mca:CSharpReference x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">Summation</mca:CSharpReference>
@@ -163,7 +161,7 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="749,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">
                 <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">Index</mca:CSharpReference>
@@ -173,7 +171,7 @@
               <InArgument x:TypeArguments="x:Int32">0</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="749,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">
                 <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">iterartor</mca:CSharpReference>
@@ -185,25 +183,16 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="749,1841" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+          <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="671,870" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
             <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="713,1676" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,705" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <AddToCollection x:TypeArguments="x:Int32" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="671,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1">
-                  <AddToCollection.Item>
-                    <InArgument x:TypeArguments="x:Int32">
-                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">Index</mca:CSharpValue>
-                    </InArgument>
-                  </AddToCollection.Item>
-                  <InArgument x:TypeArguments="scg:ICollection(x:Int32)">
-                    <mca:CSharpValue x:TypeArguments="scg:ICollection(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">List_of_indices</mca:CSharpValue>
-                  </InArgument>
-                </AddToCollection>
-                <If sap:VirtualizedContainerService.HintSize="671,259" sap2010:WorkflowViewState.IdRef="If_1">
+                <If sap:VirtualizedContainerService.HintSize="521,413" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">(iterartor &amp; 1 )== 1</mca:CSharpValue>
@@ -216,143 +205,59 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Optimizing-Algorithm\\Add lists.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="Out_Sum_List">
-                          <mca:CSharpReference x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">Summation</mca:CSharpReference>
-                        </OutArgument>
-                        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="In_List_2">
-                          <mca:CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">List_of_warehouses_to_be_modified[Index].GetRange(2,List_of_warehouses_to_be_modified[Index].Count-2)</mca:CSharpValue>
-                        </InArgument>
-                        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="In_List_1">
-                          <mca:CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">Summation.ConvertAll&lt;string&gt;(x =&gt; x.ToString())</mca:CSharpValue>
-                        </InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                  </If.Then>
-                </If>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="671,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Optimizing-Algorithm\\Compare Lists.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="In_List_1">
-                      <mca:CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">Summation</mca:CSharpValue>
-                    </InArgument>
-                    <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="In_List_2">
-                      <mca:CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">In_NeededList.ConvertAll(int.Parse)</mca:CSharpValue>
-                    </InArgument>
-                    <OutArgument x:TypeArguments="x:Boolean" x:Key="Out_Is_equal">
-                      <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">Found_it</mca:CSharpReference>
-                    </OutArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                </ui:InvokeWorkflowFile>
-                <If DisplayName="If warehouses materials is sufficient" sap:VirtualizedContainerService.HintSize="671,871" sap2010:WorkflowViewState.IdRef="If_3">
-                  <If.Condition>
-                    <InArgument x:TypeArguments="x:Boolean">
-                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">Found_it</mca:CSharpValue>
-                    </InArgument>
-                  </If.Condition>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <If.Then>
-                    <Sequence DisplayName="Set the minimum price warehouses indices" sap:VirtualizedContainerService.HintSize="526,724" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="x:Int32" Default="0" Name="price_temp" />
-                      </Sequence.Variables>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,266" sap2010:WorkflowViewState.IdRef="Sequence_8">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_6">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:Int32">
-                            <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">price_temp</mca:CSharpReference>
+                      <AddToCollection x:TypeArguments="x:Int32" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1">
+                        <AddToCollection.Item>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">Index</mca:CSharpValue>
+                          </InArgument>
+                        </AddToCollection.Item>
+                        <InArgument x:TypeArguments="scg:ICollection(x:Int32)">
+                          <mca:CSharpValue x:TypeArguments="scg:ICollection(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">List_of_indices</mca:CSharpValue>
+                        </InArgument>
+                      </AddToCollection>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Optimizing-Algorithm\\Add lists.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="Out_Sum_List">
+                            <mca:CSharpReference x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">Summation</mca:CSharpReference>
                           </OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="484,285" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
-                        <ui:ForEach.Body>
-                          <ActivityAction x:TypeArguments="x:Int32">
-                            <ActivityAction.Argument>
-                              <DelegateInArgument x:TypeArguments="x:Int32" Name="i" />
-                            </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Int32">
-                                    <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">price_temp</mca:CSharpReference>
-                                  </OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Int32">
-                                    <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18" xml:space="preserve">price_temp +  int.Parse(List_of_warehouses_to_be_modified[i][0])</mca:CSharpValue>
-                                  </InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </Sequence>
-                          </ActivityAction>
-                        </ui:ForEach.Body>
-                        <ui:ForEach.Values>
-                          <InArgument x:TypeArguments="sc:IEnumerable">
-                            <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">List_of_indices</mca:CSharpValue>
+                          <InArgument x:TypeArguments="scg:List(x:String)" x:Key="In_List_2">
+                            <mca:CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">List_of_warehouses_to_be_modified[Index].GetRange(2,List_of_warehouses_to_be_modified[Index].Count-2)</mca:CSharpValue>
                           </InArgument>
-                        </ui:ForEach.Values>
-                      </ui:ForEach>
-                      <If sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_2">
-                        <If.Condition>
-                          <InArgument x:TypeArguments="x:Boolean">
-                            <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">price_temp &lt; Min_price</mca:CSharpValue>
+                          <InArgument x:TypeArguments="scg:List(x:String)" x:Key="In_List_1">
+                            <mca:CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">Summation.ConvertAll&lt;string&gt;(x =&gt; x.ToString())</mca:CSharpValue>
                           </InArgument>
-                        </If.Condition>
-                        <If.Then>
-                          <AddToCollection x:TypeArguments="scg:List(x:Int32)" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2">
-                            <AddToCollection.Item>
-                              <InArgument x:TypeArguments="scg:List(x:Int32)">
-                                <mca:CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">List_of_indices</mca:CSharpValue>
-                              </InArgument>
-                            </AddToCollection.Item>
-                            <InArgument x:TypeArguments="scg:ICollection(scg:List(x:Int32))">
-                              <mca:CSharpValue x:TypeArguments="scg:ICollection(scg:List(x:Int32))" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">List_of_indices_where_we_found_it</mca:CSharpValue>
-                            </InArgument>
-                          </AddToCollection>
-                        </If.Then>
-                      </If>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
                     </Sequence>
                   </If.Then>
                 </If>
-                <Assign sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                <Assign sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">
-                      <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">Index</mca:CSharpReference>
+                      <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">Index</mca:CSharpReference>
                     </OutArgument>
                   </Assign.To>
                   <Assign.Value>
                     <InArgument x:TypeArguments="x:Int32">
-                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">Index+1</mca:CSharpValue>
+                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">Index+1</mca:CSharpValue>
                     </InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                <Assign sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">
-                      <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">iterartor</mca:CSharpReference>
+                      <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">iterartor</mca:CSharpReference>
                     </OutArgument>
                   </Assign.To>
                   <Assign.Value>
                     <InArgument x:TypeArguments="x:Int32">
-                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">iterartor &gt;&gt; 1</mca:CSharpValue>
+                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">iterartor &gt;&gt; 1</mca:CSharpValue>
                     </InArgument>
                   </Assign.Value>
                 </Assign>
@@ -368,7 +273,127 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InterruptibleWhile>
-          <Assign sap:VirtualizedContainerService.HintSize="749,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="671,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Optimizing-Algorithm\\Compare Lists.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="In_List_1">
+                <mca:CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">Summation</mca:CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="In_List_2">
+                <mca:CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">In_NeededList.ConvertAll(int.Parse)</mca:CSharpValue>
+              </InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="Out_Is_equal">
+                <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">Found_it</mca:CSharpReference>
+              </OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <If DisplayName="If warehouses materials is sufficient" sap:VirtualizedContainerService.HintSize="671,1025" sap2010:WorkflowViewState.IdRef="If_5">
+            <If.Condition>
+              <InArgument x:TypeArguments="x:Boolean">
+                <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">Found_it</mca:CSharpValue>
+              </InArgument>
+            </If.Condition>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence DisplayName="Set the minimum price warehouses indices" sap:VirtualizedContainerService.HintSize="526,878" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Int32" Default="0" Name="price_temp" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">
+                      <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">price_temp</mca:CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="484,285" sap2010:WorkflowViewState.IdRef="ForEach`1_3">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="x:Int32">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Int32" Name="i" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">
+                              <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">price_temp</mca:CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45" xml:space="preserve">price_temp +  int.Parse(List_of_warehouses_to_be_modified[i][0])</mca:CSharpValue>
+                            </InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                  <ui:ForEach.Values>
+                    <InArgument x:TypeArguments="sc:IEnumerable">
+                      <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">List_of_indices</mca:CSharpValue>
+                    </InArgument>
+                  </ui:ForEach.Values>
+                </ui:ForEach>
+                <If sap:VirtualizedContainerService.HintSize="484,361" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">price_temp &lt; Min_price</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <AddToCollection x:TypeArguments="scg:List(x:Int32)" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4">
+                        <AddToCollection.Item>
+                          <InArgument x:TypeArguments="scg:List(x:Int32)">
+                            <mca:CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">List_of_indices</mca:CSharpValue>
+                          </InArgument>
+                        </AddToCollection.Item>
+                        <InArgument x:TypeArguments="scg:ICollection(scg:List(x:Int32))">
+                          <mca:CSharpValue x:TypeArguments="scg:ICollection(scg:List(x:Int32))" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">List_of_indices_where_we_found_it</mca:CSharpValue>
+                        </InArgument>
+                      </AddToCollection>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Double">
+                            <mca:CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">Min_price</mca:CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Double">
+                            <mca:CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">Convert.ToDouble(price_temp)</mca:CSharpValue>
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                </If>
+              </Sequence>
+            </If.Then>
+          </If>
+          <Assign sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_10">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">
                 <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">Range</mca:CSharpReference>
@@ -380,18 +405,25 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <ClearCollection x:TypeArguments="x:Int32" DisplayName="Clear Collection" sap:VirtualizedContainerService.HintSize="749,22" sap2010:WorkflowViewState.IdRef="ClearCollection`1_1">
-            <InArgument x:TypeArguments="scg:ICollection(x:Int32)">
-              <mca:CSharpValue x:TypeArguments="scg:ICollection(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">List_of_indices</mca:CSharpValue>
-            </InArgument>
-          </ClearCollection>
+          <Assign sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(x:Int32)">
+                <mca:CSharpReference x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">List_of_indices</mca:CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(x:Int32)">
+                <mca:CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">new List&lt;int&gt;()</mca:CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
         </Sequence>
       </ui:InterruptibleWhile.Body>
       <ui:InterruptibleWhile.Condition>
         <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">Range &lt;= Convert.ToInt32( Math.Pow(2 , In_ListOfAllWarehouses.Count)-1)</mca:CSharpValue>
       </ui:InterruptibleWhile.Condition>
     </ui:InterruptibleWhile>
-    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="827,248" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="749,248" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
@@ -410,7 +442,7 @@
                 </InArgument>
               </AddToCollection.Item>
               <InArgument x:TypeArguments="scg:ICollection(x:String)">
-                <mca:CSharpValue x:TypeArguments="scg:ICollection(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">Out_NamesOfNeededWarehouses</mca:CSharpValue>
+                <mca:CSharpValue x:TypeArguments="scg:ICollection(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">NamesOfNeededWarehouses</mca:CSharpValue>
               </InArgument>
             </AddToCollection>
           </Sequence>
@@ -422,7 +454,19 @@
         </InArgument>
       </ui:ForEach.Values>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="827,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+    <Assign sap:VirtualizedContainerService.HintSize="749,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(x:String)">
+          <mca:CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">Out_NamesOfNeededWarehouses</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">
+          <mca:CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">NamesOfNeededWarehouses</mca:CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="749,60" sap2010:WorkflowViewState.IdRef="Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Double">
           <mca:CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">Out_MinPrice</mca:CSharpReference>

@@ -85,7 +85,11 @@
       <Variable x:TypeArguments="scg:List(scg:List(x:String))" Name="listOfAllWarehouses" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="matrialsname" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="neededlist" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="NamesOfNeededWarehouses" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="NamesOfNeededWarehouses">
+        <Variable.Default>
+          <mca:CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">new List &lt;string&gt;()</mca:CSharpValue>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="scg:List(x:String)" Name="Mandatory_WareHouses">
         <Variable.Default>
           <mca:CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">new List&lt;string&gt;()</mca:CSharpValue>
@@ -597,7 +601,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,145.5 300,164.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,460" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="two.xlsx">
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="two.xlsx">
         <ui:ExcelApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
             <ActivityAction.Argument>
