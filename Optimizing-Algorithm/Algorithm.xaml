@@ -3,10 +3,10 @@
     <x:Property Name="In_NeededList" Type="InArgument(scg:List(x:String))" />
     <x:Property Name="In_ListOfAllWarehouses" Type="InArgument(scg:List(scg:List(x:String)))" />
     <x:Property Name="Out_NamesOfNeededWarehouses" Type="OutArgument(scg:List(x:String))" />
-    <x:Property Name="Out_MinPrice" Type="OutArgument(x:Int32)" />
+    <x:Property Name="Out_MinPrice" Type="OutArgument(x:Double)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>753,2468</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>718,2417</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -71,16 +71,12 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Algorithm" sap:VirtualizedContainerService.HintSize="532,2303" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Algorithm" sap:VirtualizedContainerService.HintSize="532,2212" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="Range" />
       <Variable x:TypeArguments="scg:List(scg:List(x:Int32))" Name="List_of_indices_where_we_found_it" />
       <Variable x:TypeArguments="scg:List(scg:List(x:String))" Name="List_of_warehouses_to_be_modified" />
-      <Variable x:TypeArguments="x:Boolean" Name="Continue_the_algorithm">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" Value="True" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="True" Name="Continue_the_algorithm" />
       <Variable x:TypeArguments="x:Boolean" Name="Found_it" />
       <Variable x:TypeArguments="x:Int32" Name="Index" />
       <Variable x:TypeArguments="x:Int32" Name="iterartor" />
@@ -95,9 +91,9 @@
           <mca:CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">new List&lt;int&gt;()</mca:CSharpValue>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="Min_price">
+      <Variable x:TypeArguments="x:Double" Name="Min_price">
         <Variable.Default>
-          <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">Convert.ToInt32(double.PositiveInfinity)</mca:CSharpValue>
+          <mca:CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">double.PositiveInfinity</mca:CSharpValue>
         </Variable.Default>
       </Variable>
     </Sequence.Variables>
@@ -130,9 +126,9 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="490,1623" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="490,1532" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454,1458" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454,1367" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,9 +168,9 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="412,904" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+          <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="412,813" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
             <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,739" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,648" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -343,31 +339,6 @@
                     </InArgument>
                   </Assign.Value>
                 </Assign>
-                <If DisplayName="If the warehouses indicies differ by one" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_3">
-                  <If.Condition>
-                    <InArgument x:TypeArguments="x:Boolean">
-                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">!(List_of_indices.Zip(List_of_indices.Skip(1), (x, y) =&gt; y - x).ToList().Any(i =&gt; i !=1))</mca:CSharpValue>
-                    </InArgument>
-                  </If.Condition>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <If.Then>
-                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:Boolean">
-                          <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">Continue_the_algorithm</mca:CSharpReference>
-                        </OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </If.Then>
-                </If>
               </Sequence>
             </ui:InterruptibleWhile.Body>
             <ui:InterruptibleWhile.Condition>
@@ -400,7 +371,7 @@
         </Sequence>
       </ui:InterruptibleWhile.Body>
       <ui:InterruptibleWhile.Condition>
-        <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">Range &lt;= Convert.ToInt32( Math.Pow(2 , In_ListOfAllWarehouses.Count)-1) &amp;&amp; Continue_the_algorithm</mca:CSharpValue>
+        <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">Range &lt;= Convert.ToInt32( Math.Pow(2 , In_ListOfAllWarehouses.Count)-1)</mca:CSharpValue>
       </ui:InterruptibleWhile.Condition>
     </ui:InterruptibleWhile>
     <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="490,248" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
@@ -436,13 +407,13 @@
     </ui:ForEach>
     <Assign sap:VirtualizedContainerService.HintSize="490,60" sap2010:WorkflowViewState.IdRef="Assign_14">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:Int32">
-          <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">Out_MinPrice</mca:CSharpReference>
+        <OutArgument x:TypeArguments="x:Double">
+          <mca:CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">Out_MinPrice</mca:CSharpReference>
         </OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:Int32">
-          <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">Min_price</mca:CSharpValue>
+        <InArgument x:TypeArguments="x:Double">
+          <mca:CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">Min_price</mca:CSharpValue>
         </InArgument>
       </Assign.Value>
     </Assign>
