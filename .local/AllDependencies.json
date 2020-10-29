@@ -3500,15 +3500,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Abdelgawad\\.nuget\\packages\\": {}
+    "C:\\Users\\Sarah\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Warehouse-Cost-Problem",
       "projectName": "Warehouse-Cost-Problem",
-      "projectPath": "E:\\Ui Path\\Ui Path Projects\\Warehouse-Cost-Problem\\.local",
-      "packagesPath": "C:\\Users\\Abdelgawad\\.nuget\\packages\\",
-      "outputPath": "E:\\Ui Path\\Ui Path Projects\\Warehouse-Cost-Problem\\.local"
+      "projectPath": "C:\\Users\\Sarah\\Documents\\UiPath\\Challenge4\\.local",
+      "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sarah\\Documents\\UiPath\\Challenge4\\.local"
     },
     "frameworks": {
       "net461": {
